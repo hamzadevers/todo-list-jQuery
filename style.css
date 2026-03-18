@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d1b3e;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ── Container ── */
+.todo-container {
+  background-color: #112255;
+  border-radius: 12px;
+  padding: 30px 24px;
+  width: 360px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.todo-container h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ── Input Row ── */
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.input-row input {
+  flex: 1;
+  background-color: #1a2f5e;
+  border: 1px solid #2a4080;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #aab8d0;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-row input::placeholder {
+  color: #6a7fa0;
+}
+
+.input-row input:focus {
+  border-color: #4da6d8;
+}
+
+.input-row button {
+  background-color: #2e9fc7;
+  border: none;
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.input-row button:hover {
+  background-color: #3ab5df;
+}
+
+/* ── Task List ── */
+#task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Task Item ── */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1a2f5e;
+  border-radius: 8px;
+  padding: 11px 14px;
+}
+
+/* Custom Checkbox */
+.task-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #4a6090;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  background-color: transparent;
+}
+
+.task-item input[type="checkbox"]:checked {
+  background-color: #2e9fc7;
+  border-color: #2e9fc7;
+}
+
+.task-item input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Task Label */
+.task-item label {
+  flex: 1;
+  color: #ccd8f0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.task-item.done label {
+  text-decoration: line-through;
+  color: #5a6a8a;
+}
+
+/* Delete Button */
+.task-item .btn-delete {
+  background: none;
+  border: none;
+  color: #6a7fa0;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+}
+
+.task-item .btn-delete:hover {
+  color: #e05555;
+}
